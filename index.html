@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Redirect</title>
+    <script>
+        // Функция для получения текущего пути из URL
+        function getPath() {
+            return window.location.pathname; // Получаем часть URL после домена
+        }
+
+        // Функция для перенаправления в зависимости от пути
+        function redirectToTelegram() {
+            const path = getPath();
+
+            // Определяем ссылки для перенаправления
+            const links = {
+                '/chat': 'https://t.me/CoyoteWatch_chat',  // Замените на вашу ссылку чата
+                '/channel': 'https://t.me/CoyoteWatch',  // Замените на вашу ссылку канала
+                '/bot': 'https://t.me/CoyoteWatch_bot'  // Замените на вашу ссылку бота
+            };
+
+            // Проверяем, есть ли путь в объекте links
+            if (links[path]) {
+                window.location.href = links[path]; // Перенаправляем на соответствующую ссылку
+            } else {
+                document.getElementById('message').innerText = 'Страница не найдена';
+            }
+        }
+
+        // Вызываем функцию перенаправления при загрузке страницы
+        window.onload = redirectToTelegram;
+    </script>
+</head>
+<body>
+    <h1 id="message">Перенаправление...</h1>
+</body>
+</html>
