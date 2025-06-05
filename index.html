@@ -33,17 +33,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- /Yandex.Metrika counter -->
     <script>
         function getParameter() {
-            const queryString = window.location.search; 
-            const params = new URLSearchParams(queryString);
-            return params.get('redirect');
+            const queryString = window.location.search;
+            return queryString.substring(1);
+        }
 
         function redirectToTelegram() {
             const param = getParameter();
-
             const links = {
-                'chat': 'https://t.me/CoyoteWatchChat',
-                'channel': 'https://t.me/CoyoteWatch',
-                'bot': 'https://t.me/CoyoteWatch_bot'
+                'chat': 'https://t.me/CoyoteWatchChat', 
+                'channel': 'https://t.me/CoyoteWatch', 
+                'bot': 'https://t.me/CoyoteWatch_bot' 
             };
 
             if (links[param]) {
