@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telegram Redirect</title>
     <script>
-        // Функция для получения текущего пути из URL
-        function getPath() {
-            return window.location.pathname; // Получаем часть URL после домена
+        // Функция для получения параметра из URL
+        function getParameter() {
+            const queryString = window.location.search; // Получаем часть URL после "?"
+            const params = new URLSearchParams(queryString); // Парсим параметры
+            return params.get('redirect'); // Получаем значение параметра "redirect"
         }
 
-        // Функция для перенаправления в зависимости от пути
+        // Функция для перенаправления в зависимости от параметра
         function redirectToTelegram() {
-            const path = getPath();
+            const param = getParameter();
 
             // Определяем ссылки для перенаправления
             const links = {
-                '/chat': 'https://t.me/CoyoteWatch_chat',  // Замените на вашу ссылку чата
-                '/channel': 'https://t.me/CoyoteWatch',  // Замените на вашу ссылку канала
-                '/bot': 'https://t.me/CoyoteWatch_bot'  // Замените на вашу ссылку бота
+                'chat': 'https://t.me/CoyoteWatchChat',    // Ссылка на чат
+                'channel': 'https://t.me/CoyoteWatch',      // Ссылка на канал
+                'bot': 'https://t.me/CoyoteWatch_bot'       // Ссылка на бота
             };
 
-            // Проверяем, есть ли путь в объекте links
-            if (links[path]) {
-                window.location.href = links[path]; // Перенаправляем на соответствующую ссылку
+            // Проверяем, есть ли параметр в объекте links
+            if (links[param]) {
+                window.location.href = links[param]; // Перенаправляем на соответствующую ссылку
             } else {
                 document.getElementById('message').innerText = 'Страница не найдена';
             }
