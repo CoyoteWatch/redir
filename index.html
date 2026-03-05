@@ -27,8 +27,7 @@ d.addEventListener("DOMContentLoaded", f, false);
 
 <noscript>
 <div>
-<img src="https://top-fwz1.mail.ru/counter?id=3658285;js=na"
-style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
+<img src="https://top-fwz1.mail.ru/counter?id=3658285;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
 </div>
 </noscript>
 
@@ -73,8 +72,7 @@ accurateTrackBounce:true
 
 <noscript>
 <div>
-<img src="https://mc.yandex.ru/watch/102158805"
-style="position:absolute; left:-9999px;" alt="" />
+<img src="https://mc.yandex.ru/watch/102158805" style="position:absolute; left:-9999px;" alt="" />
 </div>
 </noscript>
 
@@ -115,19 +113,12 @@ document.getElementById("message").innerText = "Ошибка загрузки с
 
 function redirectToTelegram() {
 
+const defaultRef = "?start=rJ_1PVkrcOhFX2AKop9OKjVLrUMgXPJGfrNLB4GTLLU";
+
 const parts = getQueryParts();
 
-const myRef = "?start=rJ_1PVkrcOhFX2AKop9OKjVLrUMgXPJGfrNLB4GTLLU";
-
-const links = {
-chat: "https://t.me/CoyoteWatchChat",
-channel: "https://t.me/Coyote_Watch",
-bot: "https://t.me/QRCode_Alphabot",
-ref: "https://t.me/QRCode_Alphabot" + myRef
-};
-
 if (parts.length === 0) {
-window.location.href = links.ref;
+redirectRandomBot(defaultRef);
 return;
 }
 
@@ -138,7 +129,8 @@ if (first === "rb") {
 let tail = defaultRef;
 
 if (parts.length >= 2) {
-tail = "?start=" + encodeURIComponent(parts[1]);
+const clean = parts[1].replace("?", "");
+tail = "?start=" + encodeURIComponent(clean);
 }
 
 redirectRandomBot(tail);
@@ -146,11 +138,7 @@ return;
 
 }
 
-if (links[first]) {
-window.location.href = links[first];
-} else {
 document.getElementById("message").innerText = "Страница не найдена";
-}
 
 }
 
