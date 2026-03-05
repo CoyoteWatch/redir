@@ -10,19 +10,38 @@ var _tmr = window._tmr || (window._tmr = []);
 _tmr.push({id: "3658285", type: "pageView", start: (new Date()).getTime(), pid: "USER_ID"});
 (function (d, w, id) {
 if (d.getElementById(id)) return;
-var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+var ts = d.createElement("script");
+ts.type = "text/javascript";
+ts.async = true;
+ts.id = id;
 ts.src = "https://top-fwz1.mail.ru/js/code.js";
-var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+var f = function () {
+var s = d.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(ts, s);
+};
+if (w.opera == "[object Opera]") {
+d.addEventListener("DOMContentLoaded", f, false);
+} else { f(); }
 })(document, window, "tmr-code");
 </script>
-<noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3658285;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
+
+<noscript>
+<div>
+<img src="https://top-fwz1.mail.ru/counter?id=3658285;js=na"
+style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
+</div>
+</noscript>
 
 <script>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+(function(w,d,s,l,i){
+w[l]=w[l]||[];
+w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),
+dl=l!='dataLayer'?'&l='+l:'';
+j.async=true;
+j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TCXQX8BN');
 </script>
 
@@ -38,9 +57,12 @@ m[i].l=1*new Date();
 for (var j = 0; j < document.scripts.length; j++) {
 if (document.scripts[j].src === r) { return; }
 }
-k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-})
-(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+k=e.createElement(t),
+a=e.getElementsByTagName(t)[0],
+k.async=1,
+k.src=r,
+a.parentNode.insertBefore(k,a)
+})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
 ym(102158805, "init", {
 clickmap:true,
@@ -51,78 +73,95 @@ accurateTrackBounce:true
 
 <noscript>
 <div>
-<img src="https://mc.yandex.ru/watch/102158805" style="position:absolute; left:-9999px;" alt="" />
+<img src="https://mc.yandex.ru/watch/102158805"
+style="position:absolute; left:-9999px;" alt="" />
 </div>
 </noscript>
 
 <script>
-function getQueryParts(){
-const q=window.location.search;
-if(!q||q.length<=1)return[];
+
+function getQueryParts() {
+const q = window.location.search;
+if (!q || q.length <= 1) return [];
 return q.substring(1).split("&").filter(Boolean);
 }
 
-function joinTg(bot,tail){
-return "https://t.me/"+bot+(tail?tail:"");
+function joinTg(bot, tail) {
+return "https://t.me/" + bot + (tail ? tail : "");
 }
 
-async function redirectRandomBot(tail){
-try{
-const response=await fetch("https://raw.githubusercontent.com/kGsofqkC/a/main/a");
-const base64=await response.text();
-const decoded=atob(base64.trim());
-const data=JSON.parse(decoded);
-const bots=data.a;
-if(!bots||bots.length===0)throw new Error("Empty list");
+async function redirectRandomBot(tail) {
+try {
 
-const rand=new Uint32Array(1);
+const response = await fetch("https://raw.githubusercontent.com/kGsofqkC/a/main/a");
+const base64 = await response.text();
+const decoded = atob(base64.trim());
+const data = JSON.parse(decoded);
+const bots = data.a;
+
+if (!bots || bots.length === 0) throw new Error("Empty list");
+
+const rand = new Uint32Array(1);
 crypto.getRandomValues(rand);
-const randomBot=bots[rand[0]%bots.length];
 
-window.location.href=joinTg(randomBot,tail);
-}catch(e){
-document.getElementById("message").innerText="Ошибка загрузки списка ботов";
+const randomBot = bots[rand[0] % bots.length];
+
+window.location.href = joinTg(randomBot, tail);
+
+} catch (e) {
+document.getElementById("message").innerText = "Ошибка загрузки списка ботов";
 }
 }
 
-function redirectToTelegram(){
-const parts=getQueryParts();
+function redirectToTelegram() {
 
-const myRef="?start=rJ_1PVkrcOhFX2AKop9OKjVLrUMgXPJGfrNLB4GTLLU";
+const parts = getQueryParts();
 
-const links={
-chat:"https://t.me/CoyoteWatchChat",
-channel:"https://t.me/Coyote_Watch",
-bot:"https://t.me/QRCode_Alphabot",
-ref:"https://t.me/QRCode_Alphabot"+myRef
+const defaultRef = "?start=rJ_1PVkrcOhFX2AKop9OKjVLrUMgXPJGfrNLB4GTLLU";
+
+const links = {
+chat: "https://t.me/CoyoteWatchChat",
+channel: "https://t.me/Coyote_Watch",
+bot: "https://t.me/QRCode_Alphabot",
+ref: "https://t.me/QRCode_Alphabot" + defaultRef
 };
 
-if(parts.length===0){
-window.location.href=links.ref;
+if (parts.length === 0) {
+window.location.href = links.ref;
 return;
 }
 
-const first=parts[0];
+const first = parts[0];
 
-if(first==="rb"){
-let tail=(parts.length>=2)?parts.slice(1).join("&"):myRef;
-if(tail&&!tail.startsWith("?"))tail="?"+tail;
+if (first === "rb") {
+
+let tail = defaultRef;
+
+if (parts.length >= 2) {
+tail = "?start=" + encodeURIComponent(parts[1]);
+}
+
 redirectRandomBot(tail);
 return;
+
 }
 
-if(links[first]){
-window.location.href=links[first];
-}else{
-document.getElementById("message").innerText="Страница не найдена";
-}
+if (links[first]) {
+window.location.href = links[first];
+} else {
+document.getElementById("message").innerText = "Страница не найдена";
 }
 
-window.onload=redirectToTelegram;
+}
+
+window.onload = redirectToTelegram;
+
 </script>
 
 </head>
 <body>
+
 <h1 id="message">Перенаправление...</h1>
+
 </body>
 </html>
