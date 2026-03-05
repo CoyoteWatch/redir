@@ -1,77 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoyoteWatch Redirect</title>
-    <!-- Top.Mail.Ru counter -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoyoteWatch Redirect</title>
+
+<!-- Top.Mail.Ru counter -->
 <script type="text/javascript">
 var _tmr = window._tmr || (window._tmr = []);
 _tmr.push({id: "3658285", type: "pageView", start: (new Date()).getTime(), pid: "USER_ID"});
 (function (d, w, id) {
-  if (d.getElementById(id)) return;
-  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
-  ts.src = "https://top-fwz1.mail.ru/js/code.js";
-  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+if (d.getElementById(id)) return;
+var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+ts.src = "https://top-fwz1.mail.ru/js/code.js";
+var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
 })(document, window, "tmr-code");
 </script>
 <noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3658285;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
 <!-- /Top.Mail.Ru counter -->
 
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TCXQX8BN');</script>
-<!-- End Google Tag Manager -->
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCXQX8BN"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(102158805, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
+})(window,document,'script','dataLayer','GTM-TCXQX8BN');
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/102158805" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCXQX8BN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {
+if (document.scripts[j].src === r) { return; }
+}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})
+(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+ym(102158805, "init", {
+clickmap:true,
+trackLinks:true,
+accurateTrackBounce:true
+});
+</script>
+<noscript>
+<div>
+<img src="https://mc.yandex.ru/watch/102158805" style="position:absolute; left:-9999px;" alt="" />
+</div>
+</noscript>
 <!-- /Yandex.Metrika counter -->
-    <script>
-        function getParameter() {
-            const queryString = window.location.search;
-            return queryString.substring(1);
-        }
 
-        function redirectToTelegram() {
-            const param = getParameter();
-            const links = {
-                'chat': 'https://t.me/CoyoteWatchChat', 
-                'channel': 'https://t.me/Coyote_Watch', 
-                'bot': 'https://t.me/QRCode_Alphabot', 
-                'ref': 'https://t.me/QRCode_Alphabot?start=rJ_1PVkrcOhFX2AKop9OKjVLrUMgXPJGfrNLB4GTLLU' 
-            };
+<script>
 
-            if (links[param]) {
-                window.location.href = links[param];
-            } else {
-                document.getElementById('message').innerText = 'Страница не найдена';
-            }
-        }
+function getParameter() {
+const queryString = window.location.search;
+return queryString.substring(1);
+}
 
-        window.onload = redirectToTelegram;
-    </script>
+async function redirectRandomBot() {
+try {
+
+const response = await fetch("https://raw.githubusercontent.com/kGsofqkC/a/main/a");
+const base64 = await response.text();
+
+const decoded = atob(base64.trim());
+const data = JSON.parse(decoded);
+
+const bots = data.a;
+
+if (!bots || bots.length === 0) {
+throw new Error("Empty list");
+}
+
+const randomBot = bots[Math.floor(Math.random() * bots.length)];
+
+window.location.href = "https://t.me/" + randomBot;
+
+} catch (e) {
+
+document.getElementById('message').innerText = "Ошибка загрузки списка ботов";
+
+}
+
+}
+
+function redirectToTelegram() {
+
+const param = getParameter();
+
+const links = {
+
+'chat': 'https://t.me/CoyoteWatchChat',
+'channel': 'https://t.me/Coyote_Watch',
+'bot': 'https://t.me/QRCode_Alphabot',
+'ref': 'https://t.me/QRCode_Alphabot?start=rJ_1PVkrcOhFX2AKop9OKjVLrUMgXPJGfrNLB4GTLLU'
+
+};
+
+if (param === "rb") {
+redirectRandomBot();
+return;
+}
+
+if (links[param]) {
+
+window.location.href = links[param];
+
+} else {
+
+document.getElementById('message').innerText = 'Страница не найдена';
+
+}
+
+}
+
+window.onload = redirectToTelegram;
+
+</script>
+
 </head>
+
 <body>
-    <h1 id="message">Перенаправление...</h1>
+
+<h1 id="message">Перенаправление...</h1>
+
 </body>
 </html>
