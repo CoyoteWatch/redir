@@ -74,7 +74,11 @@ const decoded=atob(base64.trim());
 const data=JSON.parse(decoded);
 const bots=data.a;
 if(!bots||bots.length===0)throw new Error("Empty list");
-const randomBot=bots[Math.floor(Math.random()*bots.length)];
+
+const rand=new Uint32Array(1);
+crypto.getRandomValues(rand);
+const randomBot=bots[rand[0]%bots.length];
+
 window.location.href=joinTg(randomBot,tail);
 }catch(e){
 document.getElementById("message").innerText="Ошибка загрузки списка ботов";
