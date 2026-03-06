@@ -70,7 +70,7 @@ accurateTrackBounce:true
 });
 
 ym(102158805, 'getClientID', function(clientID) {
-    console.log('ClientID:', clientID);
+console.log('ClientID:', clientID);
 });
 </script>
 
@@ -92,7 +92,19 @@ function joinTg(bot, tail) {
 return "https://t.me/" + bot + (tail ? tail : "");
 }
 
-async function redirectRandomBot(tail) {
+function joinChannel(channel) {
+return "https://t.me/" + channel;
+}
+
+function joinChat(chat) {
+return "https://t.me/" + chat;
+}
+
+function redirbot() {
+window.location.href = "https://t.me/QRCode_Alphabot";
+}
+
+async function redirrand(tail) {
 try {
 
 const response = await fetch("https://raw.githubusercontent.com/kGsofqkC/a/main/a");
@@ -115,6 +127,42 @@ document.getElementById("message").innerText = "Ошибка загрузки с
 }
 }
 
+async function redirchannel() {
+try {
+
+const response = await fetch("https://raw.githubusercontent.com/kGsofqkC/a/main/a");
+const base64 = await response.text();
+const decoded = atob(base64.trim());
+const data = JSON.parse(decoded);
+const channel = data.b;
+
+if (!channel) throw new Error("No channel");
+
+window.location.href = joinChannel(channel);
+
+} catch (e) {
+document.getElementById("message").innerText = "Ошибка загрузки канала";
+}
+}
+
+async function redirchat() {
+try {
+
+const response = await fetch("https://raw.githubusercontent.com/kGsofqkC/a/main/a");
+const base64 = await response.text();
+const decoded = atob(base64.trim());
+const data = JSON.parse(decoded);
+const chat = data.c;
+
+if (!chat) throw new Error("No chat");
+
+window.location.href = joinChat(chat);
+
+} catch (e) {
+document.getElementById("message").innerText = "Ошибка загрузки чата";
+}
+}
+
 function redirectToTelegram() {
 
 const defaultRef = "?start=rJ_1PVkrcOhFX2AKop9OKjVLrUMgXPJGfrNLB4GTLLU";
@@ -122,7 +170,7 @@ const defaultRef = "?start=rJ_1PVkrcOhFX2AKop9OKjVLrUMgXPJGfrNLB4GTLLU";
 const parts = getQueryParts();
 
 if (parts.length === 0) {
-redirectRandomBot(defaultRef);
+redirrand(defaultRef);
 return;
 }
 
@@ -137,9 +185,24 @@ const clean = parts[1].replace("?", "");
 tail = "?start=" + encodeURIComponent(clean);
 }
 
-redirectRandomBot(tail);
+redirrand(tail);
 return;
 
+}
+
+if (first === "bot") {
+redirbot();
+return;
+}
+
+if (first === "channel") {
+redirchannel();
+return;
+}
+
+if (first === "chat") {
+redirchat();
+return;
 }
 
 document.getElementById("message").innerText = "Страница не найдена";
